@@ -1,5 +1,9 @@
 # ReleaseGuard
 
+## New evidence workbench (2026-11-18)
+
+Wallet-free snapshot/citation verification, JSON evidence export and fresh-chain import authentication, Markdown reports, record permalinks and two-record comparisons are now available at https://genlayer-proofwork.sillynightingale1.chatgpt.site/releaseguard/audit?record=1 . See [MILESTONE-1.md](MILESTONE-1.md) for the accepted baseline, exact new work, tests, live evidence and limitations. The deployed contract is unchanged.
+
 ReleaseGuard records whether an exact published GitHub release explicitly supports a software announcement. It separates **evidence capture** from **AI interpretation**: validators fetch the official tag endpoint and agree on normalized evidence before an immutable claim is assessed against that frozen snapshot.
 
 Supported means the notes support the claim, **not** that code was audited or a feature works. Missing evidence is not contradiction. Fetch failure, draft releases, identity mismatch, oversized notes and snapshot disagreements fail closed; they do not become negative judgments.
