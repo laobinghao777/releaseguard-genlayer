@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-18T02:14:51.914Z",
+  "recordId": "1",
+  "hash": "0d17d9027d9cfb4fb359dfd20b14292507066149c0a9541b4dda665fa3315472",
+  "verdict": "supported",
+  "finalContractRead": true,
+  "liveImportAuthenticated": true,
+  "tamperedClaimRejected": true,
+  "newTransactions": 0,
+  "newTestGENCost": "0",
+  "comparisonLivePairVerified": false
+}
