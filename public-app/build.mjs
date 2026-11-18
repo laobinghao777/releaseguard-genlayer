@@ -1,8 +1,11 @@
 import fs from 'node:fs/promises';
 import {build} from 'esbuild';
 const out=await build({entryPoints:['app.js'],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022',minify:true});
+const auditOut=await build({entryPoints:['release-audit.js'],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022',minify:true});
 const assets={'/app.js':{type:'text/javascript; charset=utf-8',body:out.outputFiles[0].text},'/style.css':{type:'text/css; charset=utf-8',body:await fs.readFile('style.css','utf8')}};
 const html=await fs.readFile('index.html','utf8');
+assets['/release-audit.js']={type:'text/javascript; charset=utf-8',body:auditOut.outputFiles[0].text};
+assets['/releaseguard/audit']={type:'text/html; charset=utf-8',body:await fs.readFile('release-audit.html','utf8')};
 await fs.mkdir('dist/server',{recursive:true});
 const worker=`const assets=${JSON.stringify(assets)};const html=${JSON.stringify(html)};
 const headers={'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'"};
