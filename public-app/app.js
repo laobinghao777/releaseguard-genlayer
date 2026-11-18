@@ -39,4 +39,5 @@ $('#create').innerHTML=kind==='delivery'?'<label>Brief title<input name="title" 
 $('#create').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);if(kind==='delivery'){const c=String(f.get('criteria')).split('\n').map(x=>x.trim()).filter(Boolean);if(!c.length||c.length>8||c.some(x=>x.length<5||x.length>500)||new Set(c).size!==c.length){notice('Enter 1–8 distinct criteria of 5–500 characters each.',true);return;}write('create_brief',[f.get('title'),JSON.stringify(c)]);}else write('create_check',['owner','repo','tag','claim'].map(k=>f.get(k)));};
 $('#refresh').onclick=load;$('#connect').onclick=()=>connect().catch(e=>notice(e.message,true));$('#resume').onclick=waitFinal;
 window.ethereum?.on?.('accountsChanged',()=>{account=null;client=makeClient();$('#wallet').textContent='Wallet changed. Reconnect to continue.';render();});
+if(kind==='release'){const auditLink=document.createElement('a');auditLink.href='/releaseguard/audit?record=1';auditLink.textContent='Verify, export & compare evidence →';$('#scope').after(auditLink);}
 pending=localStorage.getItem('proofwork-pending-'+kind);showTx();await load();
