@@ -1,0 +1,32 @@
+{
+  "assessment": {
+    "passage_ids": [
+      1,
+      2
+    ],
+    "quotes": [
+      "This is the Flask 3.1.2 fix release, which fixes bugs but does not otherwise change behavior and should not result in breaking changes compared to the latest feature release.\r\n\r\nPyPI: https://pypi.org/project/Flask/3.1.2/\r\nChanges: https://flask.palletsprojects.com/page/changes/#version-3-1-2\r\nMilestone: https://github.com/pallets/flask/milestone/38?closed=1\r\n\r\n- `stream_with_context` does not fai",
+      "l inside async views. #5774\r\n- When using `follow_redirects` in the test client, the final state of `session` is correct. #5786\r\n- Relax type hint for passing bytes IO to `send_file`. #5776\r\n"
+    ],
+    "reason": "The release notes explicitly state that `stream_with_context` does not fail inside async views, indicating a fix for that issue.",
+    "snapshot_sha256": "0d17d9027d9cfb4fb359dfd20b14292507066149c0a9541b4dda665fa3315472",
+    "verdict": "supported"
+  },
+  "claim": "Flask 3.1.2 fixes stream_with_context failing inside async views.",
+  "id": "1",
+  "owner": "0xF10aB469555eb723d62A565217EE678A8C200526",
+  "repository": "pallets/flask",
+  "snapshot": {
+    "body": "This is the Flask 3.1.2 fix release, which fixes bugs but does not otherwise change behavior and should not result in breaking changes compared to the latest feature release.\r\n\r\nPyPI: https://pypi.org/project/Flask/3.1.2/\r\nChanges: https://flask.palletsprojects.com/page/changes/#version-3-1-2\r\nMilestone: https://github.com/pallets/flask/milestone/38?closed=1\r\n\r\n- `stream_with_context` does not fail inside async views. #5774\r\n- When using `follow_redirects` in the test client, the final state of `session` is correct. #5786\r\n- Relax type hint for passing bytes IO to `send_file`. #5776\r\n",
+    "id": 241017558,
+    "name": "3.1.2",
+    "prerelease": false,
+    "published_at": "2025-08-19T21:03:31Z",
+    "tag": "3.1.2",
+    "url": "https://github.com/pallets/flask/releases/tag/3.1.2"
+  },
+  "snapshot_sha256": "0d17d9027d9cfb4fb359dfd20b14292507066149c0a9541b4dda665fa3315472",
+  "source_url": "https://api.github.com/repos/pallets/flask/releases/tags/3.1.2",
+  "status": "assessed",
+  "tag": "3.1.2"
+}
